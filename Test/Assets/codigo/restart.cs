@@ -13,6 +13,11 @@ public class restart : MonoBehaviour{
             Restart();
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {   
+            Application.Quit();
+        }
+
     }
     private void Restart()
     {

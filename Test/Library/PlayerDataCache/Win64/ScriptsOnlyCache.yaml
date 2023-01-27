@@ -87,21 +87,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3172}
     - Class: 114
-      Script: {instanceID: 3674}
+      Script: {instanceID: 3332}
     - Class: 114
-      Script: {instanceID: 4280}
+      Script: {instanceID: 3676}
     - Class: 114
-      Script: {instanceID: 4556}
+      Script: {instanceID: 4282}
     - Class: 114
-      Script: {instanceID: 5338}
+      Script: {instanceID: 4558}
     - Class: 114
-      Script: {instanceID: 6688}
+      Script: {instanceID: 5340}
     - Class: 114
-      Script: {instanceID: 7710}
+      Script: {instanceID: 6690}
     - Class: 114
-      Script: {instanceID: 7834}
+      Script: {instanceID: 7712}
     - Class: 114
-      Script: {instanceID: 25856}
+      Script: {instanceID: 7836}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -361,6 +361,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnMouseDragMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: restart
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -855,7 +861,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: 8796d8f57a61d66866273cf46b86769d
+      Hash: c3f31848d2be8e3e1b587b4dc6446f4c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: mqttControllerCube
@@ -931,13 +937,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: restart
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/theus/Desktop/Test.exe
+  playerPath: C:/Users/theus/Desktop/joguin/Test.exe

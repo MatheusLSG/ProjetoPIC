@@ -16,6 +16,6 @@ public class mqttControllerText : MonoBehaviour
 
   private void OnMessageArrivedHandler(string newMsg)
   {
-    this.GetComponent<TextMeshPro>().text=newMsg;
+    this.GetComponent<TextMeshPro>().text= (newMsg.Split(';'))[1];
   }
 }
