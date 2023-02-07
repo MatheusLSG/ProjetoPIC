@@ -4,16 +4,16 @@ using UnityEngine;
 using TMPro;
 public class mqttControllerCube : MonoBehaviour
 {
+  private BOLA sc;
+  private GameObject bola;
   public Quaternion target;
   float gy_x=0, gy_y=0, gy_z=0;
   Quaternion gy;
   int contador = -1; 
-  bool trava = true;
+  bool trava = false;
   float[] vetorX = new float[100];
   float[] vetorY = new float[100];
   float[] vetorZ = new float[100];
-
-  float m_x1, m_y1, m_z1, m_x2, m_y2, m_z2; 
 
   
   float smooth = 1f;
@@ -23,6 +23,8 @@ public class mqttControllerCube : MonoBehaviour
 
   void Start()
   {
+    bola = GameObject.Find("Sphere");
+    sc = bola.GetComponent<BOLA>();
       _eventSender=GameObject.FindGameObjectsWithTag(tagOfTheMQTTReceiver)[0].gameObject.GetComponent<mqttReceiver>();
     _eventSender.OnMessageArrived += OnMessageArrivedHandler;
   
@@ -45,10 +47,11 @@ public class mqttControllerCube : MonoBehaviour
 
       Debug.Log($"{x},{y},{z}");
 
-      gy *= Quaternion.AngleAxis(x/1.5f, Vector3.right);
-      gy *= Quaternion.AngleAxis(z/1.85f, Vector3.up);
-      gy *= Quaternion.AngleAxis(y/1.75f, Vector3.forward);
-      
+      if(sc.timer >= 3){
+        gy *= Quaternion.AngleAxis(x/1.5f, Vector3.right);
+        gy *= Quaternion.AngleAxis(z/1.85f, Vector3.up);
+        gy *= Quaternion.AngleAxis(y/1.75f, Vector3.forward);
+      }
     }
 
   }
@@ -56,29 +59,22 @@ public class mqttControllerCube : MonoBehaviour
   public GameObject targetR;
   private void Update() {
     
-    //Debug.Log($"{target.x},{target.y},{target.z}");
+      if(sc.timer >= 3){
+        if (Input.GetKeyDown("a")){
+          gy *= Quaternion.AngleAxis(45, Vector3.right);
+        }
+      }
     // Dampen towards the target rotation
     transform.rotation = Quaternion.Slerp(transform.rotation, gy,  Time.deltaTime * smooth);
-    
-    if (Input.GetKeyDown(KeyCode.D))
-    {
-      //transform.RotateAround(targetR.transform.position, transform.right, 10 * Time.deltaTime);
-      gy *= Quaternion.AngleAxis(45, Vector3.right);
-    }
-    if (Input.GetKeyDown(KeyCode.W))
-    {
-      //transform.RotateAround(targetR.transform.position, transform.up, 10 * Time.deltaTime);
-      gy *= Quaternion.AngleAxis(45, Vector3.up);
-    }
-    if (Input.GetKeyDown(KeyCode.S))
-    {
-      //transform.RotateAround(targetR.transform.position, transform.forward, 10 * Time.deltaTime);
-      gy *= Quaternion.AngleAxis(45, Vector3.forward);
-    }
-    
-
+ 
     //restart cube
-    if (Input.GetKeyDown(KeyCode.C))
+    if (sc.respawn == false && sc.timer < 3)
+    {
+        transform.rotation = Quaternion.Euler(0,0,0);
+        gy = Quaternion.Euler(0,0,0);
+    }
+
+    if (Input.GetKeyDown("c"))
     {
         transform.rotation = Quaternion.Euler(0,0,0);
         gy = Quaternion.Euler(0,0,0);

@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class BOLA : MonoBehaviour
 {
-    
+    Renderer rend;
+    //Rigidbody tb;
+    public float timer = 0;
+    public bool respawn = false;
     private GameObject cubo;
     // Start is called before the first frame update
     void Start()
     {
+        rend = GetComponent<Renderer>();
+        //rb = GetComponent<Rigidbody>();
+        rend.enabled = true;
         cubo = GameObject.Find("Cube");
         
     }
@@ -16,7 +22,25 @@ public class BOLA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(timer<3){
+            transform.position = new Vector3(0,20,0);
+            transform.rotation = Quaternion.Euler(0,0,0);
+            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            timer+= Time.deltaTime;
+        }
+
+        if(respawn)
+        {
+            if(Input.GetKeyDown("return")){
+                timer = 0;
+                rend.enabled = true;
+                respawn = false;
+                transform.position = new Vector3(0,20,0);
+                transform.rotation = Quaternion.Euler(0,0,0);
+                GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+                GetComponent<Rigidbody>().angularVelocity = new Vector3(0,0,0);
+            }
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -25,10 +49,8 @@ public class BOLA : MonoBehaviour
         {
             Debug.Log($"{contact.otherCollider.name}");
             if(contact.otherCollider.name == "Plane"){
-                transform.position = new Vector3(0,20,0);
-                transform.rotation = Quaternion.Euler(0,0,0);
-                GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
-                GetComponent<Rigidbody>().angularVelocity = new Vector3(0,0,0);
+               respawn = true;
+               rend.enabled = false;
             }
         }
         /*

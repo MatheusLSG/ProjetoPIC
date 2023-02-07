@@ -355,6 +355,7 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/codigo/BOLA.cs"
+"Assets/codigo/FimDeJogo.cs"
 "Assets/codigo/HelloWorld.cs"
 "Assets/codigo/M2Mqtt/Exceptions/MqttClientException.cs"
 "Assets/codigo/M2Mqtt/Exceptions/MqttCommunicationException.cs"
@@ -409,6 +410,7 @@
 "Assets/codigo/mqttControllerCube.cs"
 "Assets/codigo/mqttControllerText.cs"
 "Assets/codigo/mqttReceiver.cs"
+"Assets/codigo/Pontos.cs"
 "Assets/codigo/restart.cs"
 -langversion:9.0
 

@@ -2,6 +2,9 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - BOLA
+    - FimDeJogo
+    - Pontos
+    - movimentaLava
     - mqttControllerCube
     - mqttControllerText
     - mqttReceiver
@@ -14,10 +17,17 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshPro
+    - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.HorizontalLayoutGroup
   serializedClasses:
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
@@ -36,6 +46,7 @@ ScriptsOnlyBuild:
     - TMPro.VertexGradient
     UnityEngine.CoreModule:
     - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.RectOffset
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
@@ -83,25 +94,43 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2218}
+      Script: {instanceID: 2224}
     - Class: 114
-      Script: {instanceID: 3172}
+      Script: {instanceID: 2668}
     - Class: 114
-      Script: {instanceID: 3332}
+      Script: {instanceID: 2896}
     - Class: 114
-      Script: {instanceID: 3676}
+      Script: {instanceID: 3178}
     - Class: 114
-      Script: {instanceID: 4282}
+      Script: {instanceID: 3338}
     - Class: 114
-      Script: {instanceID: 4558}
+      Script: {instanceID: 3682}
     - Class: 114
-      Script: {instanceID: 5340}
+      Script: {instanceID: 4288}
     - Class: 114
-      Script: {instanceID: 6690}
+      Script: {instanceID: 4564}
     - Class: 114
-      Script: {instanceID: 7712}
+      Script: {instanceID: 5260}
     - Class: 114
-      Script: {instanceID: 7836}
+      Script: {instanceID: 5346}
+    - Class: 114
+      Script: {instanceID: 5966}
+    - Class: 114
+      Script: {instanceID: 6120}
+    - Class: 114
+      Script: {instanceID: 6476}
+    - Class: 114
+      Script: {instanceID: 6512}
+    - Class: 114
+      Script: {instanceID: 6698}
+    - Class: 114
+      Script: {instanceID: 7720}
+    - Class: 114
+      Script: {instanceID: 7844}
+    - Class: 114
+      Script: {instanceID: 25042}
+    - Class: 114
+      Script: {instanceID: 26520}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -111,6 +140,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
@@ -717,6 +750,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
+      Hash: b8a025422a11c1de812bac762766499a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: movimentaLava
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -735,7 +774,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: ab38e2f76fcd13e6401dc1859ab4cc8f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BOLA
@@ -937,6 +976,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 2e96da79a3828475e1c3d21ef177afa7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Pontos
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FimDeJogo
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

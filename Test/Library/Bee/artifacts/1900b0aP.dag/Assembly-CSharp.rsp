@@ -311,6 +311,7 @@
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.State.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/UnityEngine.UI.ref.dll"
 "Assets/codigo/BOLA.cs"
+"Assets/codigo/FimDeJogo.cs"
 "Assets/codigo/HelloWorld.cs"
 "Assets/codigo/M2Mqtt/Exceptions/MqttClientException.cs"
 "Assets/codigo/M2Mqtt/Exceptions/MqttCommunicationException.cs"
@@ -361,9 +362,11 @@
 "Assets/codigo/M2MqttUnity/Examples/Scripts/M2MqttUnityTest.cs"
 "Assets/codigo/M2MqttUnity/Scripts/BrokerSettings.cs"
 "Assets/codigo/M2MqttUnity/Scripts/M2MqttUnityClient.cs"
+"Assets/codigo/movimentaLava.cs"
 "Assets/codigo/mqttControllerCube.cs"
 "Assets/codigo/mqttControllerText.cs"
 "Assets/codigo/mqttReceiver.cs"
+"Assets/codigo/Pontos.cs"
 "Assets/codigo/restart.cs"
 -langversion:9.0
 

@@ -104,6 +104,7 @@ m_ResolvedPackages:
     - 2.0.0-preview.20
     - 2.0.0-preview.21
     - 2.0.0-preview.22
+    - 2.0.0
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
@@ -118,6 +119,7 @@ m_ResolvedPackages:
     - 2.0.0-preview.20
     - 2.0.0-preview.21
     - 2.0.0-preview.22
+    - 2.0.0
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
@@ -309,11 +311,13 @@ m_ResolvedPackages:
     - 3.0.15
     - 3.0.16
     - 3.0.17
+    - 3.0.18
     compatible:
     - 3.0.15
     - 3.0.16
     - 3.0.17
-    verified: 3.0.17
+    - 3.0.18
+    verified: 3.0.18
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -2949,8 +2953,10 @@ m_ResolvedPackages:
     - 1.1.0-pre.2
     - 1.1.0
     - 1.1.1
+    - 1.2.2
     compatible:
     - 1.1.1
+    - 1.2.2
     verified: 1.1.1
   dependencies: []
   resolvedDependencies: []
@@ -3124,11 +3130,13 @@ m_ResolvedPackages:
     - 1.5.2
     - 1.6.0
     - 1.7.0
+    - 1.7.1
     compatible:
     - 1.4.3
     - 1.5.2
     - 1.6.0
     - 1.7.0
+    - 1.7.1
     verified: 1.4.3
   dependencies:
   - name: com.unity.modules.unitywebrequest
