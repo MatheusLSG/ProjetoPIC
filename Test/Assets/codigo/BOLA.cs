@@ -11,6 +11,7 @@ public class BOLA : MonoBehaviour
     private GameObject cubo;
     public bool inWindZone = false;
     public GameObject windZone;
+    public bool ImInGame = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,10 @@ public class BOLA : MonoBehaviour
             transform.rotation = Quaternion.Euler(0,0,0);
             GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             timer+= Time.deltaTime;
+        }
+        else if(respawn==false)
+        {
+            ImInGame = true;
         }
 
         if(respawn)
@@ -77,6 +82,7 @@ public class BOLA : MonoBehaviour
             Debug.Log($"{contact.otherCollider.name}");
             if(contact.otherCollider.name == "Plane"){
                respawn = true;
+               ImInGame = false;
                rend.enabled = false;
             }
 

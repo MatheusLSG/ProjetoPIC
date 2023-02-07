@@ -26,6 +26,7 @@ public class Pontos : MonoBehaviour
         }
 
         if(sc.timer >= 3 && sc.respawn == false){
+            sc.ImInGame = true;
             pontos += Time.deltaTime;
         }
         
