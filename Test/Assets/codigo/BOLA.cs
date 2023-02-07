@@ -4,45 +4,19 @@ using UnityEngine;
 
 public class BOLA : MonoBehaviour
 {
+    
     private GameObject cubo;
-    public bool inWindZone = false;
-    public GameObject windZone;
-
     // Start is called before the first frame update
     void Start()
     {
         cubo = GameObject.Find("Cube");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    private void FixedUpdate()
-    {
-        if(inWindZone)
-        {
-            gameObject.GetComponent<Rigidbody>().AddForce(windZone.GetComponent<WindArea>().direction * windZone.GetComponent<WindArea>().strenght);    
-        }
-    }
-
-    void OnTriggerEnter(Collider coll)
-    {
-        if(coll.gameObject.tag == "windArea")
-        {
-            windZone = coll.gameObject;
-            inWindZone = true;
-        }
-    }
-
-    void OnTriggerExit(Collider coll)
-    {
-        if(coll.gameObject.tag == "windArea")
-        {
-            inWindZone = false;
-        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -56,8 +30,6 @@ public class BOLA : MonoBehaviour
                 GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
                 GetComponent<Rigidbody>().angularVelocity = new Vector3(0,0,0);
             }
-
-
         }
         /*
         ContactPoint contact = collision.contacts[0];

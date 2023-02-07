@@ -6,7 +6,6 @@ TagManager:
   tags:
   - 'MQTT_Receiver '
   - MR
-  - windArea
   layers:
   - Default
   - TransparentFX
