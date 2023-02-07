@@ -9,6 +9,9 @@ public class BOLA : MonoBehaviour
     public float timer = 0;
     public bool respawn = false;
     private GameObject cubo;
+    public bool inWindZone = false;
+    public GameObject windZone;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +19,6 @@ public class BOLA : MonoBehaviour
         //rb = GetComponent<Rigidbody>();
         rend.enabled = true;
         cubo = GameObject.Find("Cube");
-        
     }
 
     // Update is called once per frame
@@ -43,6 +45,31 @@ public class BOLA : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if(inWindZone)
+        {
+            gameObject.GetComponent<Rigidbody>().AddForce(windZone.GetComponent<WindArea>().direction * windZone.GetComponent<WindArea>().strenght);    
+        }
+    }
+
+    void OnTriggerEnter(Collider coll)
+    {
+        if(coll.gameObject.tag == "windArea")
+        {
+            windZone = coll.gameObject;
+            inWindZone = true;
+        }
+    }
+
+    void OnTriggerExit(Collider coll)
+    {
+        if(coll.gameObject.tag == "windArea")
+        {
+            inWindZone = false;
+        }
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         foreach (ContactPoint contact in collision.contacts)
@@ -52,6 +79,8 @@ public class BOLA : MonoBehaviour
                respawn = true;
                rend.enabled = false;
             }
+
+
         }
         /*
         ContactPoint contact = collision.contacts[0];
